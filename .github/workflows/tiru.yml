@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@main
     - name: Bump version and push tag
-      uses: devibadampudi/github-tag-action@main
+      uses: devibadampudi/My-project@main
       env:
         GITHUB_TOKEN: ${{ secrets.TAG_TOKEN }}
         REPO_OWNER: devibadampudi
