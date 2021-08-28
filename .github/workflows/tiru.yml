@@ -13,4 +13,4 @@ jobs:
     - name: Bump version and push tag
       uses: devibadampudi/My-project@main
       env:
-        GITHUB_TOKEN: ${{ secrets.Tag_token }}
+        GITHUB_TOKEN: ${{ secrets.TAG_TOKEN }}
