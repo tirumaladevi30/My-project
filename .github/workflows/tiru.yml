@@ -8,8 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@main
+      with:
+        fetch-depth: '0'
     - name: Bump version and push tag
       uses: devibadampudi/My-project@main
       env:
-        GITHUB_TOKEN: ${{ secrets.TAG_TOKEN }}
-        REPO_OWNER: devibadampudi
+        GITHUB_TOKEN: ${{ secrets.Tag_token }}
