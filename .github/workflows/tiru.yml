@@ -2,15 +2,17 @@ name: Bump version
 on:
   push:
     branches:
-      - main
+      - master
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@main
+    - uses: actions/checkout@v2
       with:
         fetch-depth: '0'
     - name: Bump version and push tag
-      uses: devibadampudi/My-project@main
+      uses: anothrNick/github-tag-action@1.26.0
       env:
         GITHUB_TOKEN: ${{ secrets.TAG_TOKEN }}
+        WITH_V: false
+        
