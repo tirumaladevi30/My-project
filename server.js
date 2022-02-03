@@ -1,4 +1,4 @@
-# Js vaunrabilities
+# Js vaunrabilities for test
 
 function add(a, b) {
   return a + b;
