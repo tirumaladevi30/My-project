@@ -1,35 +1,23 @@
-// program for a simple calculator
-let result;
-
-// take the operator input
-const operator = console.log('Enter operator ( either +, -, * or / ): ');
-
-// take the operand input
-const number1 = parseFloat(console.log('Enter first number: '));
-const number2 = parseFloat(console.log('Enter second number: '));
-
-switch(operator) {
-    case '+':
-         result = number1 + number2;
-        console.log(`${number1} + ${number2} = ${result}`);
-        break;
-
-    case '-':
-         result = number1 - number2;
-        console.log(`${number1} - ${number2} = ${result}`);
-        break;
-
-    case '*':
-         result = number1 * number2;
-        console.log(`${number1} * ${number2} = ${result}`);
-        break;
-
-    case '/':
-         result = number1 / number2;
-        console.log(`${number1} / ${number2} = ${result}`);
-        break;
-
-    default:
-        console.log('Invalid operator');
-        break;
+function add(a, b) {
+  return a + b;
 }
+
+function sub(a, b) {
+  return a - b;
+}
+
+function mul(a, b) {
+  return a * b;
+}
+
+function div(a, b) {
+  return a / b;
+}
+
+console.log(add(4, 2));
+
+console.log(sub(4, 2));
+
+console.log(mul(4, 2));
+
+console.log(div(4, 2));
