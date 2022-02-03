@@ -1,18 +1,23 @@
-name: Bump version
+name: "js vaunrability "
 on:
+  # Trigger analysis when pushing in master or pull requests, and when creating
+  # a pull request.
   push:
     branches:
       - main
+  pull_request:
+      types: [opened, synchronize, reopened]
+
 jobs:
-  build:
+  sonarcloud:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
       with:
-        fetch-depth: '0'
-    - name: Bump version and push tag
-      uses: anothrNick/github-tag-action@1.26.0
+        # Disabling shallow clone is recommended for improving relevancy of reporting
+        fetch-depth: 0
+    - name: SonarCloud Scan
+      uses: sonarsource/sonarcloud-github-action@v1.5
       env:
-        GITHUB_TOKEN: ${{ secrets.TAG_TOKEN }}
-        WITH_V: false
-        
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
