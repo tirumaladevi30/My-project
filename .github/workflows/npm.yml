@@ -1,12 +1,13 @@
-name: "js vaunrability"
+name: Check vulnerabilities
 on:
-  # Trigger analysis when pushing in master or pull requests, and when creating
-  # a pull request.
   push:
     branches:
       - master
+  pull_request:
+    branches:
+      - master
 jobs:
-  sonarcloud:
+  audit_ci_job:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
